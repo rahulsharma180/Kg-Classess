@@ -1,6 +1,7 @@
  
 import './App.css'
 import ErrorMassege from './Component/ErrorMassege'
+import Foodinput from './Component/Foodinput'
 import Foodlist from "./Component/Foodlist"
 function App() {
  
@@ -8,9 +9,10 @@ function App() {
   // let foodItems = [];  
   return (
     <>  
-      <center className='Mr'><h1>Healthy Food</h1></center>
-     <center> <Foodlist item={foodItems}/></center> 
-     <center>  <ErrorMassege item={foodItems}/></center> 
+     <h1 className='hd'>Healthy Food</h1> 
+     <Foodinput/>
+     <Foodlist item={foodItems}/> 
+      <ErrorMassege item={foodItems}/> 
       </>
   )
 }
