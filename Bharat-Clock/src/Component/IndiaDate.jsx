@@ -1,7 +1,7 @@
   
  import React, { useEffect, useState } from 'react';
 
- export function IndiaTime() {
+ export function IndiaDate() {
    const [currentTime, setCurrentTime] = useState(new Date());
  
    useEffect(() => {
@@ -15,20 +15,28 @@
    }, []);
 
 
-  
+  // Extract day, month, and year
+  const day = currentTime.getDate(); // Day of the month (1-31)
+  const month = currentTime.getMonth() + 1; // Month (0-11, so add 1 for 1-12)
+  const year = currentTime.getFullYear(); // Full year (e.g., 2024)
+  // const month = String(currentTime.getMonth() + 1).padStart(2, '0');
+  // const day = String(currentTime.getDate()).padStart(2, '0');
  
    return (
      <>
-       <div>
-         <center>
-           <p className="fs-4 time  ">
-             This is the current time: <br /><span className='fs-2 fw-bold'>{currentTime.toLocaleTimeString()}{" "}</span>
-             {/* {currentTime.toLocaleDateString()} */}
-           </p>
-          
+       <div className='d-flex '>
+       
             
-           
-         </center>
+        <p className="fs-1 fw-bold mx-4   date">
+           {day} 
+        </p>
+        <p className="fs-1 fw-bold mx-4   date">
+         {month}
+        </p>
+        <p className="fs-1 fw-bold mx-4   date">
+         {year}
+        </p>
+          
        </div>
      </>
    );
